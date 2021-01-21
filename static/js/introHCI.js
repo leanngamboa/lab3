@@ -11,8 +11,32 @@ $(document).ready(function() {
 function initializePage() {
 	$("#testjs").click(function(e) {
 		$('.jumbotron h1').text("Javascript is connected");
+		$("#testjs").text("Please wait...");
+		$(".jumbotron p").toggleClass("active");
 	});
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
+
+	console.log("some_string");
+
+	console.log($(".project").length)
+
+	$(".project").click(projectClick);
+	function projectClick(e) {
+		e.preventDefault();
+		var containingProject = $(this).closest(".project");
+		var description = $(containingProject).find(".project-description");
+		if (description.length == 0) {
+			$(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
+		//	$(".project-description").show();
+		} else {
+			//description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+			$(".project-description").toggle();
+		}
+
+	}
+
+
+
 }
