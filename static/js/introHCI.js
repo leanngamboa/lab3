@@ -32,7 +32,7 @@ function initializePage() {
 		//	$(".project-description").show();
 		} else {
 			//description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
-			$(".project-description").toggle();
+			description.toggle();
 		}
 
 	}
